@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Servicios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center p-4 min-h-screen">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 w-full max-w-4xl border border-gray-200">
+
+        <!-- Header Section -->
+        <div class="mb-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">Reserva tu Servicio</h1>
+            <p class="text-lg md:text-xl text-gray-500">Agrega tu fecha de inicio y finalización para el servicio.</p>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-12">
+            <!-- Service Card Section -->
+            <div class="lg:w-1/2 p-6 bg-gray-50 rounded-2xl border border-gray-200">
+                <h2 class="text-2xl font-bold mb-4">Selecciona un Servicio</h2>
+                
+                <div class="space-y-4">
+                    <!-- Service Option 1 -->
+                    <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
+                        <input type="radio" name="service" value="Servicio de Limpieza Profunda" class="sr-only peer" checked>
+                        <div class="flex items-start">
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                            <div class="ml-4 flex-grow">
+                                <span class="block text-lg font-semibold text-gray-800">Limpieza Profunda</span>
+                                <span class="block text-sm text-gray-500 mt-1">Ideal para una limpieza completa de tu hogar.</span>
+                            </div>|
+                        </div>
+                    </label>
+
+                    <!-- Service Option 2 -->
+                    <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
+                        <input type="radio" name="service" value="Servicio de Jardinería Completo" class="sr-only peer">
+                        <div class="flex items-start">
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                            <div class="ml-4 flex-grow">
+                                <span class="block text-lg font-semibold text-gray-800">Jardinería Completa</span>
+                                <span class="block text-sm text-gray-500 mt-1">Incluye corte de césped, poda y mantenimiento.</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- Service Option 3 -->
+                    <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
+                        <input type="radio" name="service" value="Mantenimiento de Piscinas" class="sr-only peer">
+                        <div class="flex items-start">
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                            <div class="ml-4 flex-grow">
+                                <span class="block text-lg font-semibold text-gray-800">Mantenimiento de Piscinas</span>
+                                <span class="block text-sm text-gray-500 mt-1">Limpieza, químicos y revisión de equipo.</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Booking Details Section -->
+            <div class="lg:w-1/2 p-6 bg-gray-50 rounded-2xl border border-gray-200">
+                <h2 class="text-2xl font-bold mb-4">Detalles de la Reserva</h2>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <div class="flex-1">
+                        <label for="startDate" class="block text-sm font-medium text-gray-700 mb-1">Fecha de Inicio</label>
+                        <input type="date" id="startDate" name="startDate" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                    </div>
+                    <div class="flex-1">
+                        <label for="endDate" class="block text-sm font-medium text-gray-700 mb-1">Fecha de Devolución</label>
+                        <input type="date" id="endDate" name="endDate" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Tu Nombre</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                               placeholder="Ej. Ana García">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Tu Número de Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                               placeholder="Ej. +52 123 456 7890">
+                    </div>
+                </div>
+
+                <!-- WhatsApp Button -->
+                <button id="whatsappBtn"
+                        class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 rounded-xl shadow-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.04 2C7.54 2 4.02 5.51 4.02 9.98c0 1.48.42 2.92 1.25 4.17L4 20l5.81-1.57c1.19.66 2.53 1.01 3.86 1.01 4.5 0 8.02-3.51 8.02-7.98C20.04 5.51 16.52 2 12.04 2zm0 14.5c-1.1 0-2.12-.45-2.85-1.18l-.51-.59-2.92.79.8-2.82-.49-.57c-.74-.84-1.13-1.89-1.13-2.95 0-3.05 2.51-5.55 5.59-5.55s5.59 2.5 5.59 5.55c.01 3.05-2.5 5.56-5.59 5.56zm2.23-4.63c-.12-.06-.72-.35-.84-.39-.12-.04-.26-.06-.38.06s-.48.6-.58.71c-.1.12-.21.13-.4 0c-.19-.11-.8-.29-.95-.44-.14-.15-.31-.35-.44-.58-.12-.22-.01-.21.09-.38.08-.13.18-.3.27-.45.09-.15.05-.28-.02-.39-.07-.11-.38-.91-.53-1.24-.15-.32-.29-.27-.38-.27-.09 0-.19-.01-.29-.01-.11 0-.29.04-.45.18s-.65.64-.65 1.56c0 .92.67 1.8.76 1.93.09.12 1.32 2.02 3.2 2.82 1.97.83 2.5 1.15 2.76 1.34.4.29.77.26 1.05.16.32-.12.98-.4 1.12-.76.14-.35.14-.66.1-.71-.05-.05-.18-.08-.38-.19z"/>
+                    </svg>
+                    Enviar Reserva por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('whatsappBtn').addEventListener('click', function(event) {
+            const serviceRadios = document.getElementsByName('service');
+            let selectedService = '';
+            for (const radio of serviceRadios) {
+                if (radio.checked) {
+                    selectedService = radio.value;
+                    break;
+                }
+            }
+
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!selectedService || !startDate || !endDate || !name || !phone) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            const message = `Hola, me gustaría reservar un servicio.%0A%0AServicio: ${selectedService}%0AFecha de inicio: ${startDate}%0AFecha de devolución: ${endDate}%0ANombre: ${name}%0ATeléfono: ${phone}%0A%0AEspero su confirmación.`;
+            const whatsappUrl = `https://wa.me/?text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Simple alert replacement for better UX
+        function alert(message) {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '50%';
+            modal.style.left = '50%';
+            modal.style.transform = 'translate(-50%, -50%)';
+            modal.style.backgroundColor = '#fff';
+            modal.style.padding = '2rem';
+            modal.style.borderRadius = '1rem';
+            modal.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            modal.style.zIndex = '1000';
+            modal.style.maxWidth = '300px';
+            modal.style.textAlign = 'center';
+
+            const p = document.createElement('p');
+            p.textContent = message;
+            p.style.marginBottom = '1rem';
+            p.style.color = '#333';
+            
+            const button = document.createElement('button');
+            button.textContent = 'OK';
+            button.style.backgroundColor = '#2563eb';
+            button.style.color = '#fff';
+            button.style.padding = '0.5rem 1.5rem';
+            button.style.borderRadius = '9999px';
+            button.style.fontWeight = 'bold';
+            button.style.border = 'none';
+            button.addEventListener('click', () => modal.remove());
+
+            modal.appendChild(p);
+            modal.appendChild(button);
+            document.body.appendChild(modal);
+        }
+
+    </script>
+</body>
+</html>
+
