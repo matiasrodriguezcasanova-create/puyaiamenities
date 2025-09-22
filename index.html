@@ -34,7 +34,7 @@
                 <div class="space-y-4">
                     <!-- Service Option 1 -->
                     <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                        <input type="radio" name="service" value="Servicio de Limpieza Profunda" class="sr-only peer" checked>
+                        <input type="radio" name="service" value="Servicio Básico de Toallas, Sábanas y Papel higiénico" class="sr-only peer" checked>
                         <div class="flex items-start">
                             <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
@@ -46,7 +46,7 @@
 
                     <!-- Service Option 2 -->
                     <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                        <input type="radio" name="service" value="Servicio de Jardinería Completo" class="sr-only peer">
+                        <input type="radio" name="service" value="Set Premium con Toallas, Sábanas, Papel higiénico y el set de amenities de baño" class="sr-only peer">
                         <div class="flex items-start">
                             <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
@@ -58,7 +58,7 @@
 
                     <!-- Service Option 3 -->
                     <label class="block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                        <input type="radio" name="service" value="Mantenimiento de Piscinas" class="sr-only peer">
+                        <input type="radio" name="service" value="Set Full Hotel con todo lo Premium más Secador de Pelo" class="sr-only peer">
                         <div class="flex items-start">
                             <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
@@ -136,7 +136,7 @@
                 return;
             }
 
-            const message = `Hola, me gustaría reservar un servicio.%0A%0AServicio: ${selectedService}%0AFecha de inicio: ${startDate}%0AFecha de devolución: ${endDate}%0ANombre: ${name}%0ATeléfono: ${phone}%0A%0AEspero su confirmación.`;
+            const message = `Hola, me gustaría reservar un servicio.%0A%0AServicio: ${selectedService}%0AFecha de inicio: ${startDate}%0AFecha de devolución: ${endDate}%0ANombre: ${name}%0ATeléfono: ${phone}%0A%0A Todo será entregado en l apuerta del departamento o casa, en una perfecta presentación. Espero su confirmación.`;
             const whatsappUrl = `https://wa.me/56954541569?text=${message}`;
 
             window.open(whatsappUrl, '_blank');
