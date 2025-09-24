@@ -19,6 +19,42 @@
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2); /* Sombra azul para resaltar */
             transform: scale(1.02);
         }
+
+        /* Estilo para el círculo de selección */
+        .radio-circle-container {
+            position: relative;
+        }
+        
+        /* El círculo exterior (gris) */
+        .radio-circle-container {
+            width: 20px;
+            height: 20px;
+            border-radius: 9999px;
+            border: 2px solid #9ca3af; /* Tailwind's gray-400 */
+            transition: all 0.3s ease-in-out;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        /* El círculo interior (negro) */
+        .radio-circle-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background-color: #000;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Muestra el círculo negro cuando la tarjeta está seleccionada */
+        .service-card.selected .radio-circle-container::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 flex items-center justify-center p-4 min-h-screen">
@@ -48,7 +84,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 selected"
                          data-value="Servicio Básico de Toallas, Sábanas y Papel higiénico">
                         <div class="flex items-start">
-                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                            <div class="radio-circle-container"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 1 - Básico</span>
                                 <span class="block text-sm text-gray-500 mt-1">Ideal para darle un upgrade a tu Airbnb.</span>
@@ -60,7 +96,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200"
                          data-value="Set Premium con Toallas, Sábanas, Papel higiénico y el set de amenities de baño">
                         <div class="flex items-start">
-                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                             <div class="radio-circle-container"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 2 - Premium</span>
                                 <span class="block text-sm text-gray-500 mt-1">Con esto te destacarás entre las miles de ofertas que existen.</span>
@@ -72,7 +108,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200"
                          data-value="Set Full Hotel con todo lo Premium más Secador de Pelo">
                         <div class="flex items-start">
-                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
+                             <div class="radio-circle-container"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 3 - Full Hotel</span>
                                 <span class="block text-sm text-gray-500 mt-1">Obtén el máximo de reservas y recomendaciones de 5 estrellas.</span>
