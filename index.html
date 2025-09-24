@@ -104,7 +104,7 @@
                                 <span class="block text-lg font-semibold text-gray-800">Set 2 - Premium</span>
                                 <div class="text-sm text-gray-500 mt-1">
                                     <span class="font-semibold italic">Con esto te destacarás entre las miles de ofertas que existen.</span>
-                                    <div>Incluye todo lo básico más un set de shampoo 30ml, acondicinador 30ml y jabón 20gr.</div>
+                                    <div>Incluye todo lo básico más 1 jabón 20gr, 1 shampoo 30ml y 1 acondicionador 30ml.</div>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                 <span class="block text-lg font-semibold text-gray-800">Set 3 - Full Hotel</span>
                                 <div class="text-sm text-gray-500 mt-1">
                                     <span class="font-semibold italic">Obtén el máximo de reservas y recomendaciones de 5 estrellas.</span>
-                                    <div>Incluye todo lo Premium más 1 Secador de Pelo en bolsa de lino.</div>
+                                    <div>Incluye todo lo Premium más 1 Secador de Pelo.</div>
                                 </div>
                             </div>
                         </div>
@@ -160,14 +160,26 @@
                     </div>
                 </div>
 
-                <!-- WhatsApp Button -->
-                <button id="whatsappBtn"
-                        class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 rounded-xl shadow-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12.04 2C7.54 2 4.02 5.51 4.02 9.98c0 1.48.42 2.92 1.25 4.17L4 20l5.81-1.57c1.19.66 2.53 1.01 3.86 1.01 4.5 0 8.02-3.51 8.02-7.98C20.04 5.51 16.52 2 12.04 2zm0 14.5c-1.1 0-2.12-.45-2.85-1.18l-.51-.59-2.92.79.8-2.82-.49-.57c-.74-.84-1.13-1.89-1.13-2.95 0-3.05 2.51-5.55 5.59-5.55s5.59 2.5 5.59 5.55c.01 3.05-2.5 5.56-5.59 5.56zm2.23-4.63c-.12-.06-.72-.35-.84-.39-.12-.04-.26-.06-.38.06s-.48.6-.58.71c-.1.12-.21.13-.4 0c-.19-.11-.8-.29-.95-.44-.14-.15-.31-.35-.44-.58-.12-.22-.01-.21.09-.38.08-.13.18-.3.27-.45.09-.15.05-.28-.02-.39-.07-.11-.38-.91-.53-1.24-.15-.32-.29-.27-.38-.27-.09 0-.19-.01-.29-.01-.11 0-.29.04-.45.18s-.65.64-.65 1.56c0 .92.67 1.8.76 1.93.09.12 1.32 2.02 3.2 2.82 1.97.83 2.5 1.15 2.76 1.34.4.29.77.26 1.05.16.32-.12.98-.4 1.12-.76.14-.35.14-.66.1-.71-.05-.05-.18-.08-.38-.19z"/>
-                    </svg>
-                    Enviar Reserva por WhatsApp
-                </button>
+                <!-- WhatsApp Buttons Section -->
+                <div class="flex flex-col space-y-4">
+                    <!-- Botón para enviar la reserva -->
+                    <button id="whatsappBtn"
+                            class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 rounded-xl shadow-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.04 2C7.54 2 4.02 5.51 4.02 9.98c0 1.48.42 2.92 1.25 4.17L4 20l5.81-1.57c1.19.66 2.53 1.01 3.86 1.01 4.5 0 8.02-3.51 8.02-7.98C20.04 5.51 16.52 2 12.04 2zm0 14.5c-1.1 0-2.12-.45-2.85-1.18l-.51-.59-2.92.79.8-2.82-.49-.57c-.74-.84-1.13-1.89-1.13-2.95 0-3.05 2.51-5.55 5.59-5.55s5.59 2.5 5.59 5.55c.01 3.05-2.5 5.56-5.59 5.56zm2.23-4.63c-.12-.06-.72-.35-.84-.39-.12-.04-.26-.06-.38.06s-.48.6-.58.71c-.1.12-.21.13-.4 0c-.19-.11-.8-.29-.95-.44-.14-.15-.31-.35-.44-.58-.12-.22-.01-.21.09-.38.08-.13.18-.3.27-.45.09-.15.05-.28-.02-.39-.07-.11-.38-.91-.53-1.24-.15-.32-.29-.27-.38-.27-.09 0-.19-.01-.29-.01-.11 0-.29.04-.45.18s-.65.64-.65 1.56c0 .92.67 1.8.76 1.93.09.12 1.32 2.02 3.2 2.82 1.97.83 2.5 1.15 2.76 1.34.4.29.77.26 1.05.16.32-.12.98-.4 1.12-.76.14-.35.14-.66.1-.71-.05-.05-.18-.08-.38-.19z"/>
+                        </svg>
+                        Enviar Reserva por WhatsApp
+                    </button>
+
+                    <!-- Nuevo botón para solo contactar -->
+                    <button id="contactBtn"
+                            class="w-full bg-blue-500 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.04 2C7.54 2 4.02 5.51 4.02 9.98c0 1.48.42 2.92 1.25 4.17L4 20l5.81-1.57c1.19.66 2.53 1.01 3.86 1.01 4.5 0 8.02-3.51 8.02-7.98C20.04 5.51 16.52 2 12.04 2zm0 14.5c-1.1 0-2.12-.45-2.85-1.18l-.51-.59-2.92.79.8-2.82-.49-.57c-.74-.84-1.13-1.89-1.13-2.95 0-3.05 2.51-5.55 5.59-5.55s5.59 2.5 5.59 5.55c.01 3.05-2.5 5.56-5.59 5.56zm2.23-4.63c-.12-.06-.72-.35-.84-.39-.12-.04-.26-.06-.38.06s-.48.6-.58.71c-.1.12-.21.13-.4 0c-.19-.11-.8-.29-.95-.44-.14-.15-.31-.35-.44-.58-.12-.22-.01-.21.09-.38.08-.13.18-.3.27-.45.09-.15.05-.28-.02-.39-.07-.11-.38-.91-.53-1.24-.15-.32-.29-.27-.38-.27-.09 0-.19-.01-.29-.01-.11 0-.29.04-.45.18s-.65.64-.65 1.56c0 .92.67 1.8.76 1.93.09.12 1.32 2.02 3.2 2.82 1.97.83 2.5 1.15 2.76 1.34.4.29.77.26 1.05.16.32-.12.98-.4 1.12-.76.14-.35.14-.66.1-.71-.05-.05-.18-.08-.38-.19z"/>
+                        </svg>
+                        ¿Tienes dudas? Contáctanos
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -216,6 +228,13 @@
             const whatsappUrl = `https://wa.me/56954541569?text=${message}`;
 
             // Abrir la URL de WhatsApp en una nueva pestaña
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Nuevo eventListener para el botón de contacto
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            const message = "Hola, tengo una consulta sobre tus servicios. ¿Podrías ayudarme?";
+            const whatsappUrl = `https://wa.me/56954541569?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
 
