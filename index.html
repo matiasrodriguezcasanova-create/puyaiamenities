@@ -15,36 +15,9 @@
 
         /* Estilo para la tarjeta seleccionada */
         .service-card.selected {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6; /* Borde azul de Tailwind */
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2); /* Sombra azul para resaltar */
             transform: scale(1.02);
-        }
-
-        /* Estilo para el icono de selección */
-        .selection-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            border-radius: 9999px;
-            border: 2px solid #9ca3af; /* gray-400 */
-            background-color: transparent;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .service-card.selected .selection-icon {
-            border-color: #1f2937; /* gray-800, un color oscuro */
-            background-color: #1f2937;
-        }
-
-        .service-card.selected .selection-icon svg {
-            stroke: white;
-        }
-
-        .selection-icon svg {
-            color: transparent; /* Color del tick, invisible por defecto */
-            stroke: transparent;
         }
     </style>
 </head>
@@ -75,11 +48,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 selected"
                          data-value="Servicio Básico de Toallas, Sábanas y Papel higiénico">
                         <div class="flex items-start">
-                            <div class="selection-icon flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                            </div>
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 1 - Básico</span>
                                 <span class="block text-sm text-gray-500 mt-1">Ideal para darle un upgrade a tu Airbnb.</span>
@@ -91,11 +60,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200"
                          data-value="Set Premium con Toallas, Sábanas, Papel higiénico y el set de amenities de baño">
                         <div class="flex items-start">
-                            <div class="selection-icon flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                            </div>
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 2 - Premium</span>
                                 <span class="block text-sm text-gray-500 mt-1">Con esto te destacarás entre las miles de ofertas que existen.</span>
@@ -107,11 +72,7 @@
                     <div class="service-card block cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200"
                          data-value="Set Full Hotel con todo lo Premium más Secador de Pelo">
                         <div class="flex items-start">
-                            <div class="selection-icon flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                            </div>
+                            <div class="w-5 h-5 rounded-full border-2 border-gray-400 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-300 flex-shrink-0 mt-1"></div>
                             <div class="ml-4 flex-grow">
                                 <span class="block text-lg font-semibold text-gray-800">Set 3 - Full Hotel</span>
                                 <span class="block text-sm text-gray-500 mt-1">Obtén el máximo de reservas y recomendaciones de 5 estrellas.</span>
@@ -167,40 +128,53 @@
     </div>
 
     <script>
+        // Obtener todas las tarjetas de servicio
         const serviceCards = document.querySelectorAll('.service-card');
         
+        // Agregar un evento de clic a cada tarjeta
         serviceCards.forEach(card => {
             card.addEventListener('click', () => {
+                // Remover la clase 'selected' de todas las tarjetas
                 serviceCards.forEach(c => c.classList.remove('selected'));
+                
+                // Agregar la clase 'selected' a la tarjeta que fue clickeada
                 card.classList.add('selected');
             });
         });
 
+        // Manejar el clic en el botón de WhatsApp
         document.getElementById('whatsappBtn').addEventListener('click', function(event) {
+            // Obtener la tarjeta de servicio que está seleccionada
             const selectedServiceCard = document.querySelector('.service-card.selected');
             
+            // Si no hay ninguna tarjeta seleccionada, mostrar una alerta y detener el proceso
             if (!selectedServiceCard) {
                 alert('Por favor, selecciona un servicio.');
                 return;
             }
 
+            // Obtener los datos de los campos del formulario
             const selectedService = selectedServiceCard.dataset.value;
             const startDate = document.getElementById('startDate').value;
             const endDate = document.getElementById('endDate').value;
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
 
+            // Validar que todos los campos estén completos
             if (!startDate || !endDate || !name || !phone) {
                 alert('Por favor, completa todos los campos.');
                 return;
             }
 
+            // Construir el mensaje para WhatsApp
             const message = `Hola, me gustaría reservar un servicio.%0A%0AServicio: ${selectedService}%0AFecha de inicio: ${startDate}%0AFecha de devolución: ${endDate}%0ANombre: ${name}%0ATeléfono: ${phone}%0A%0ATodo será entregado en la puerta del departamento o casa, en una perfecta presentación. Espero tu confirmación.`;
             const whatsappUrl = `https://wa.me/56954541569?text=${message}`;
 
+            // Abrir la URL de WhatsApp en una nueva pestaña
             window.open(whatsappUrl, '_blank');
         });
 
+        // Reemplazo simple para 'alert()' para una mejor UX
         function alert(message) {
             const modal = document.createElement('div');
             modal.style.position = 'fixed';
@@ -237,4 +211,3 @@
     </script>
 </body>
 </html>
-
